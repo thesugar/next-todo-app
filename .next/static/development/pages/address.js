@@ -271,10 +271,30 @@ function (_Component) {
           key: data[i]['id'],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 72
           },
           __self: this
-        }, data[i]['title']));
+        }, data[i]['title'], __jsx("ul", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          },
+          __self: this
+        }, __jsx("li", {
+          key: 1,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75
+          },
+          __self: this
+        }, data[i]['detail']), __jsx("li", {
+          key: 2,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76
+          },
+          __self: this
+        }, new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()))));
       }
 
       return res;
@@ -291,7 +311,7 @@ function (_Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 90
         },
         __self: this
       }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -299,20 +319,20 @@ function (_Component) {
         onLogouted: this.logouted,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 91
         },
         __self: this
       }), __jsx("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 93
         },
         __self: this
       }, this.props.items == [] ? __jsx("li", {
         key: "0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 96
         },
         __self: this
       }, "no item.") : this.props.items));

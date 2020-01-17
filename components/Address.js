@@ -63,6 +63,7 @@ class Address extends Component {
 
     // data を元に表示項目を作成
     getItem(data) {
+        
         console.log('data is');
         console.log(data);
         if (data == undefined) {return;}
@@ -70,6 +71,10 @@ class Address extends Component {
         for (let i=0; i < data.length; i++){
         res.push(<li key={data[i]['id']}>
                     {data[i]['title']}
+                    <ul>
+                        <li key={1}>{data[i]['detail']}</li>
+                        <li key={2}>{new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()}</li>
+                    </ul>
                 </li>);
         }
         return res;
