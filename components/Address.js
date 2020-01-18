@@ -27,9 +27,9 @@ class Address extends Component {
 
     // get data from Firebase
     getFireData() {
-        if (this.props.email == undefined ||
-            this.props.email == '') { return;}
-        let email = Lib.encodeEmail(this.props.email);
+        if (firebase.auth().currentUser == undefined ||
+            firebase.auth().currentUser == null) { return;}
+
         let db = firebase.firestore(); // firestore のオブジェクト取得
     
         let ref = db.collection('tasks');
