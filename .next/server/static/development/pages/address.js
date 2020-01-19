@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -225,9 +225,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _static_address_lib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../static/address_lib */ "./static/address_lib.js");
 /* harmony import */ var _components_Account__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Account */ "./components/Account.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
 
 var _jsxFileName = "/Users/thesugar/next-todo-app/components/Address.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -267,11 +270,13 @@ class Address extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     let ref = db.collection('tasks');
     let self = this;
     ref.get().then(function (querySnapshot) {
+      let ids = [];
       let d = [];
       querySnapshot.forEach((doc, index, querySnapshot) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-        d.push(_static_address_lib__WEBPACK_IMPORTED_MODULE_5__["default"].deepCopy(doc.data())); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
+        d.push(_static_address_lib__WEBPACK_IMPORTED_MODULE_5__["default"].deepCopy(doc.data()));
+        ids.push(doc.id); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
         // forEach の中で querySnapshot の length が取得できればいいが、、
 
         self.props.dispatch({
@@ -280,8 +285,9 @@ class Address extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
             login: self.props.login,
             username: self.props.username,
             email: self.props.email,
+            docid: ids,
             data: d,
-            items: self.getItem(d)
+            items: self.getItem(d, ids)
           }
         });
       });
@@ -289,7 +295,7 @@ class Address extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
   } // data を元に表示項目を作成
 
 
-  getItem(data) {
+  getItem(data, docid) {
     console.log('data is');
     console.log(data);
 
@@ -301,30 +307,44 @@ class Address extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
 
     for (let i = 0; i < data.length; i++) {
       res.push(__jsx("li", {
-        key: data[i]['id'],
+        key: i,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 75
         },
         __self: this
-      }, data[i]['title'], __jsx("ul", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        href: "/p/[id]",
+        as: `/p/${docid[i]}`,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 76
+        },
+        __self: this
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, data[i]['title'])), __jsx("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
         },
         __self: this
       }, __jsx("li", {
         key: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 80
         },
         __self: this
       }, data[i]['detail']), __jsx("li", {
         key: 2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 81
         },
         __self: this
       }, new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()))));
@@ -342,7 +362,7 @@ class Address extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 95
       },
       __self: this
     }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -350,20 +370,20 @@ class Address extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       onLogouted: this.logouted,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 96
       },
       __self: this
     }), __jsx("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 98
       },
       __self: this
-    }, this.props.items == [] ? __jsx("li", {
+    }, this.props.items.length === 0 || this.props.items === undefined || this.props.items === null ? __jsx("li", {
       key: "0",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 101
       },
       __self: this
     }, "no item.") : this.props.items));
@@ -2875,7 +2895,7 @@ class Lib {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/address.js ***!
   \********************************/

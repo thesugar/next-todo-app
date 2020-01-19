@@ -4,6 +4,7 @@ import Router from 'next/router';
 import firebase from "firebase";
 import Lib from '../static/address_lib';
 import Account from '../components/Account';
+import Link from 'next/link';
 
 class Address extends Component {
     style = {
@@ -36,13 +37,14 @@ class Address extends Component {
         let self = this;
         ref.get()
         .then(function(querySnapshot) {
+            let ids = [];
             let d = [];
 
             querySnapshot.forEach((doc, index, querySnapshot) => {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
             d.push(Lib.deepCopy(doc.data()));
-            
+            ids.push(doc.id);
             // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
             // forEach の中で querySnapshot の length が取得できればいいが、、
             self.props.dispatch({
@@ -51,8 +53,9 @@ class Address extends Component {
                     login: self.props.login,
                     username: self.props.username,
                     email: self.props.email,
+                    docid : ids,
                     data: d,
-                    items: self.getItem(d)
+                    items: self.getItem(d, ids)
                     }
             })
             
@@ -62,15 +65,17 @@ class Address extends Component {
     }
 
     // data を元に表示項目を作成
-    getItem(data) {
-        
+    getItem(data, docid) {
+
         console.log('data is');
         console.log(data);
         if (data == undefined) {return;}
         let res = [];
         for (let i=0; i < data.length; i++){
-        res.push(<li key={data[i]['id']}>
-                    {data[i]['title']}
+        res.push(<li key={i}>
+                <Link href="/p/[id]" as={`/p/${docid[i]}`}>
+                    <a>{data[i]['title']}</a>
+                 </Link>
                     <ul>
                         <li key={1}>{data[i]['detail']}</li>
                         <li key={2}>{new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()}</li>
@@ -91,7 +96,7 @@ class Address extends Component {
                 <Account onLogined={this.logined}
                  onLogouted={this.logouted} />
                 <ul>
-                    {this.props.items == []
+                    {this.props.items.length === 0 || this.props.items === undefined || this.props.items === null
                     ?
                     <li key="0">no item.</li>
                     :

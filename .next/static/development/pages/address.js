@@ -171,6 +171,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _static_address_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../static/address_lib */ "./static/address_lib.js");
 /* harmony import */ var _components_Account__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Account */ "./components/Account.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -180,6 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/thesugar/next-todo-app/components/Address.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
 
 
 
@@ -232,11 +235,13 @@ function (_Component) {
       var ref = db.collection('tasks');
       var self = this;
       ref.get().then(function (querySnapshot) {
+        var ids = [];
         var d = [];
         querySnapshot.forEach(function (doc, index, querySnapshot) {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
-          d.push(_static_address_lib__WEBPACK_IMPORTED_MODULE_11__["default"].deepCopy(doc.data())); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
+          d.push(_static_address_lib__WEBPACK_IMPORTED_MODULE_11__["default"].deepCopy(doc.data()));
+          ids.push(doc.id); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
           // forEach の中で querySnapshot の length が取得できればいいが、、
 
           self.props.dispatch({
@@ -245,8 +250,9 @@ function (_Component) {
               login: self.props.login,
               username: self.props.username,
               email: self.props.email,
+              docid: ids,
               data: d,
-              items: self.getItem(d)
+              items: self.getItem(d, ids)
             }
           });
         });
@@ -255,7 +261,7 @@ function (_Component) {
 
   }, {
     key: "getItem",
-    value: function getItem(data) {
+    value: function getItem(data, docid) {
       console.log('data is');
       console.log(data);
 
@@ -267,30 +273,44 @@ function (_Component) {
 
       for (var i = 0; i < data.length; i++) {
         res.push(__jsx("li", {
-          key: data[i]['id'],
+          key: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 75
           },
           __self: this
-        }, data[i]['title'], __jsx("ul", {
+        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
+          href: "/p/[id]",
+          as: "/p/".concat(docid[i]),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 76
+          },
+          __self: this
+        }, __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77
+          },
+          __self: this
+        }, data[i]['title'])), __jsx("ul", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
           },
           __self: this
         }, __jsx("li", {
           key: 1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 80
           },
           __self: this
         }, data[i]['detail']), __jsx("li", {
           key: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 81
           },
           __self: this
         }, new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()))));
@@ -310,7 +330,7 @@ function (_Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 95
         },
         __self: this
       }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -318,20 +338,20 @@ function (_Component) {
         onLogouted: this.logouted,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 96
         },
         __self: this
       }), __jsx("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 98
         },
         __self: this
-      }, this.props.items == [] ? __jsx("li", {
+      }, this.props.items.length === 0 || this.props.items === undefined || this.props.items === null ? __jsx("li", {
         key: "0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 101
         },
         __self: this
       }, "no item.") : this.props.items));
@@ -66560,7 +66580,7 @@ function () {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Faddress&absolutePagePath=%2FUsers%2Fthesugar%2Fnext-todo-app%2Fpages%2Faddress.js ***!
   \********************************************************************************************************************************/
@@ -66583,5 +66603,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=address.js.map

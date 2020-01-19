@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 let fireapp;
+
 try {
     fireapp = firebase.initializeApp(firebaseConfig);
     firebase.analytics();
@@ -24,13 +25,37 @@ try {
 
 export default fireapp;
 
-let initial = {
-    login : firebase.auth().currentUser ? true: false,
-    username : firebase.auth().currentUser ? firebase.auth().currentUser.displayName : 'Guest',
-    email : firebase.auth().currentUser ? firebase.auth().currentUser.email : '',
-    data: [],
-    items: []
+let initial;
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // User is signed in.
+    console.log('currentUserあり！')
+    console.log(firebase.auth().currentUser.displayName)
+  } else {
+    // No user is signed in.
+    console.log('currentUserなし！')
+    initial = {
+        login : false,
+        username : 'unknown',
+        email : '',
+        data: [],
+        items: []
+    }
+  }
+});
+
+// ここで待たせても意味ない。。。
+function sleep(waitMsec) {
+    var startMsec = new Date();
+    console.log('sleeping...')
+    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+    while (new Date() - startMsec < waitMsec);
 }
+   
+sleep(0);
+
+console.log("initial is")
+console.log(initial);
 
 
 // reducer

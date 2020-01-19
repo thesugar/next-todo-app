@@ -2304,13 +2304,35 @@ try {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (fireapp);
-let initial = {
-  login: firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().currentUser ? true : false,
-  username: firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().currentUser ? firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().currentUser.displayName : 'Guest',
-  email: firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().currentUser ? firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().currentUser.email : '',
-  data: [],
-  items: []
-}; // reducer
+let initial;
+firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().onAuthStateChanged(user => {
+  if (user) {
+    // User is signed in.
+    console.log('currentUserあり！');
+    console.log(firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().currentUser.displayName);
+  } else {
+    // No user is signed in.
+    console.log('currentUserなし！');
+    initial = {
+      login: false,
+      username: 'unknown',
+      email: '',
+      data: [],
+      items: []
+    };
+  }
+}); // ここで待たせても意味ない。。。
+
+function sleep(waitMsec) {
+  var startMsec = new Date();
+  console.log('sleeping...'); // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+
+  while (new Date() - startMsec < waitMsec);
+}
+
+sleep(0);
+console.log("initial is");
+console.log(initial); // reducer
 
 function fireReducer(state = initial, action) {
   switch (action.type) {
