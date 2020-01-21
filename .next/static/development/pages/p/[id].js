@@ -342,7 +342,7 @@ function (_Component) {
           lineNumber: 12
         },
         __self: this
-      }, this.props.title, ">"), __jsx("meta", {
+      }, this.props.title), __jsx("meta", {
         charSet: "utf-8",
         __source: {
           fileName: _jsxFileName,
@@ -463,8 +463,9 @@ function (_Component) {
   }, {
     key: "getFireData",
     value: function getFireData() {
-      console.log('TaskDetailの中でgetFireDataが呼ばれました');
-
+      // 個別タスクのページを直接開いてそこでログインを行った場合のみ
+      // ここで Firestore からのデータ取得が行われる。
+      // タスク一覧から遷移した場合は props を読むので Firestore との通信は行われない（はず）。
       if (firebase__WEBPACK_IMPORTED_MODULE_10___default.a.auth().currentUser == undefined || firebase__WEBPACK_IMPORTED_MODULE_10___default.a.auth().currentUser == null) {
         return;
       }
@@ -512,7 +513,7 @@ function (_Component) {
           key: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 76
           },
           __self: this
         }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -521,33 +522,33 @@ function (_Component) {
           info: data[i],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 77
           },
           __self: this
         }, __jsx("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 78
           },
           __self: this
         }, data[i]['title'])), __jsx("ul", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 80
           },
           __self: this
         }, __jsx("li", {
           key: 1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 81
           },
           __self: this
         }, data[i]['detail']), __jsx("li", {
           key: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 82
           },
           __self: this
         }, new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()))));
@@ -561,7 +562,7 @@ function (_Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 91
         },
         __self: this
       }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -569,23 +570,107 @@ function (_Component) {
         onLogouted: this.logouted,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 92
         },
         __self: this
       }), __jsx("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 94
         },
         __self: this
       }, this.props.items == [] ? __jsx("li", {
         key: "0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 97
         },
         __self: this
-      }, "no item.") : this.props.items));
+      }, "no item.") : __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }, __jsx("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, this.props.taskData[this.props.docId]['title']), __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, "\u8A73\u7D30"), __jsx("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, this.props.taskData[this.props.docId]['detail']), __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }, "\u72B6\u614B"), __jsx("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        },
+        __self: this
+      }, this.props.taskData[this.props.docId]['state']), __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        },
+        __self: this
+      }, "\u671F\u65E5"), __jsx("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }, new Date(this.props.taskData[this.props.docId]['deadline'].seconds * 1000).toLocaleDateString()), __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }, "\u3053\u306E\u30BF\u30B9\u30AF\u306E\u767B\u9332\u8005"), __jsx("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }, this.props.taskData[this.props.docId]['publisher']), __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, "\u30B0\u30EB\u30FC\u30D7\u540D"), __jsx("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }, this.props.taskData[this.props.docId]['concerns']), __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }, "\u30BF\u30B9\u30AF\u306E\u5185\u5BB9\u3092\u7DE8\u96C6\u3059\u308B"), __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        },
+        __self: this
+      }, "\u30BF\u30B9\u30AF\u3092\u524A\u9664\u3059\u308B"))));
     }
   }]);
 
@@ -67119,6 +67204,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Layout_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Layout.js */ "./components/Layout.js");
 /* harmony import */ var _components_TaskDetail__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/TaskDetail */ "./components/TaskDetail.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/thesugar/next-todo-app/pages/p/[id].js";
 
 
@@ -67126,32 +67213,42 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])(); // 以下の title の部分は書き換えが必要（追加したやつがErrorになる）
 
   return __jsx(_components_Layout_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, __jsx("h1", {
-    className: "jsx-2647703310",
+    title: "Todoapp - \u30BF\u30B9\u30AF\u8A73\u7D30",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
-  }, router.query.id), __jsx(_components_TaskDetail__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_components_TaskDetail__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    docId: router.query.id,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: this
-  }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    href: "/address",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, __jsx("button", {
+    className: "jsx-2647703310",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "back")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2647703310",
     __self: this
-  }, ".markdown{font-family:'Arial';}.markdown a{-webkit-text-decoration:none;text-decoration:none;color:blue;}.markdown a:hover{opacity:0.6;}.markdown h3{margin:0;padding:0;text-transform:uppercase;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy90aGVzdWdhci9uZXh0LXRvZG8tYXBwL3BhZ2VzL3AvW2lkXS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFleUIsQUFHK0IsQUFJQyxBQUtULEFBSUgsU0FDQyxHQUpaLE9BSzJCLENBZDNCLHdCQWVBLE1BWGEsV0FDYiIsImZpbGUiOiIvVXNlcnMvdGhlc3VnYXIvbmV4dC10b2RvLWFwcC9wYWdlcy9wL1tpZF0uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VSb3V0ZXIgfSBmcm9tICduZXh0L3JvdXRlcidcbmltcG9ydCBMYXlvdXQgZnJvbSAnLi4vLi4vY29tcG9uZW50cy9MYXlvdXQuanMnXG5pbXBvcnQgVGFza0RldGFpbCBmcm9tICcuLi8uLi9jb21wb25lbnRzL1Rhc2tEZXRhaWwnO1xuXG5cbmV4cG9ydCBkZWZhdWx0ICgpID0+IHtcbiAgY29uc3Qgcm91dGVyID0gdXNlUm91dGVyKClcblxuICAvLyDku6XkuIvjga4gdGl0bGUg44Gu6YOo5YiG44Gv5pu444GN5o+b44GI44GM5b+F6KaB77yI6L+95Yqg44GX44Gf44KE44Gk44GMRXJyb3LjgavjgarjgovvvIlcbiAgcmV0dXJuIChcbiAgICA8TGF5b3V0PlxuICAgICAgPGgxPntyb3V0ZXIucXVlcnkuaWR9PC9oMT5cbiAgICAgIDxUYXNrRGV0YWlsIC8+XG5cblxuICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgLm1hcmtkb3duIHtcbiAgICAgICAgICBmb250LWZhbWlseTogJ0FyaWFsJztcbiAgICAgICAgfVxuXG4gICAgICAgIC5tYXJrZG93biBhIHtcbiAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgY29sb3I6IGJsdWU7XG4gICAgICAgIH1cblxuICAgICAgICAubWFya2Rvd24gYTpob3ZlciB7XG4gICAgICAgICAgb3BhY2l0eTogMC42O1xuICAgICAgICB9XG5cbiAgICAgICAgLm1hcmtkb3duIGgzIHtcbiAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9MYXlvdXQ+XG4gIClcbn0iXX0= */\n/*@ sourceURL=/Users/thesugar/next-todo-app/pages/p/[id].js */"));
+  }, ".markdown{font-family:'Arial';}.markdown a{-webkit-text-decoration:none;text-decoration:none;color:blue;}.markdown a:hover{opacity:0.6;}.markdown h3{margin:0;padding:0;text-transform:uppercase;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy90aGVzdWdhci9uZXh0LXRvZG8tYXBwL3BhZ2VzL3AvW2lkXS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFpQnlCLEFBRytCLEFBSUMsQUFLVCxBQUlILFNBQ0MsR0FKWixPQUsyQixDQWQzQix3QkFlQSxNQVhhLFdBQ2IiLCJmaWxlIjoiL1VzZXJzL3RoZXN1Z2FyL25leHQtdG9kby1hcHAvcGFnZXMvcC9baWRdLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlUm91dGVyIH0gZnJvbSAnbmV4dC9yb3V0ZXInXG5pbXBvcnQgTGF5b3V0IGZyb20gJy4uLy4uL2NvbXBvbmVudHMvTGF5b3V0LmpzJ1xuaW1wb3J0IFRhc2tEZXRhaWwgZnJvbSAnLi4vLi4vY29tcG9uZW50cy9UYXNrRGV0YWlsJztcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluayc7XG5cblxuZXhwb3J0IGRlZmF1bHQgKCkgPT4ge1xuICBjb25zdCByb3V0ZXIgPSB1c2VSb3V0ZXIoKVxuXG4gIC8vIOS7peS4i+OBriB0aXRsZSDjga7pg6jliIbjga/mm7jjgY3mj5vjgYjjgYzlv4XopoHvvIjov73liqDjgZfjgZ/jgoTjgaTjgYxFcnJvcuOBq+OBquOCi++8iVxuICByZXR1cm4gKFxuICAgIDxMYXlvdXQgdGl0bGU9J1RvZG9hcHAgLSDjgr/jgrnjgq/oqbPntLAnPlxuICAgICAgPFRhc2tEZXRhaWwgZG9jSWQ9e3JvdXRlci5xdWVyeS5pZH0gLz5cbiAgICAgIDxMaW5rIGhyZWY9XCIvYWRkcmVzc1wiPlxuICAgICAgICAgICAgICAgIDxidXR0b24+YmFjazwvYnV0dG9uPlxuICAgICAgPC9MaW5rPlxuXG4gICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAubWFya2Rvd24ge1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiAnQXJpYWwnO1xuICAgICAgICB9XG5cbiAgICAgICAgLm1hcmtkb3duIGEge1xuICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgICBjb2xvcjogYmx1ZTtcbiAgICAgICAgfVxuXG4gICAgICAgIC5tYXJrZG93biBhOmhvdmVyIHtcbiAgICAgICAgICBvcGFjaXR5OiAwLjY7XG4gICAgICAgIH1cblxuICAgICAgICAubWFya2Rvd24gaDMge1xuICAgICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L0xheW91dD5cbiAgKVxufSJdfQ== */\n/*@ sourceURL=/Users/thesugar/next-todo-app/pages/p/[id].js */"));
 });
 
 /***/ }),
@@ -67228,7 +67325,7 @@ function () {
 
 /***/ }),
 
-/***/ 2:
+/***/ 0:
 /*!******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fp%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fthesugar%2Fnext-todo-app%2Fpages%2Fp%2F%5Bid%5D.js ***!
   \******************************************************************************************************************************************/
@@ -67251,5 +67348,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

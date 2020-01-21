@@ -44,19 +44,6 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-// ここで待たせても意味ない。。。
-function sleep(waitMsec) {
-    var startMsec = new Date();
-    console.log('sleeping...')
-    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-    while (new Date() - startMsec < waitMsec);
-}
-   
-sleep(0);
-
-console.log("initial is")
-console.log(initial);
-
 
 // reducer
 function fireReducer (state = initial, action) {
@@ -71,6 +58,8 @@ function fireReducer (state = initial, action) {
 }
 
 // initStore function
-export function initStore(state = initial) {
+function initStore(state = initial) {
     return createStore(fireReducer, state,
         applyMiddleware(thunkMiddleware));}
+
+export { initStore };

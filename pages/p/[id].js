@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout.js'
 import TaskDetail from '../../components/TaskDetail';
+import Link from 'next/link';
 
 
 export default () => {
@@ -8,10 +9,11 @@ export default () => {
 
   // 以下の title の部分は書き換えが必要（追加したやつがErrorになる）
   return (
-    <Layout>
-      <h1>{router.query.id}</h1>
-      <TaskDetail />
-
+    <Layout title='Todoapp - タスク詳細'>
+      <TaskDetail docId={router.query.id} />
+      <Link href="/address">
+                <button>back</button>
+      </Link>
 
       <style jsx global>{`
         .markdown {

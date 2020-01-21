@@ -39,12 +39,15 @@ class Address extends Component {
         .then(function(querySnapshot) {
             let ids = [];
             let d = [];
+            let taskdoc = {};
 
             querySnapshot.forEach((doc, index, querySnapshot) => {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
-            d.push(Lib.deepCopy(doc.data()));
-            ids.push(doc.id);
+            //d.push(Lib.deepCopy(doc.data()));
+            //ids.push(doc.id);
+
+            taskdoc = Object.assign(taskdoc, {[doc.id] : Lib.deepCopy(doc.data())})
             // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
             // forEach の中で querySnapshot の length が取得できればいいが、、
             self.props.dispatch({
@@ -53,9 +56,10 @@ class Address extends Component {
                     login: self.props.login,
                     username: self.props.username,
                     email: self.props.email,
-                    docid : ids,
-                    data: d,
-                    items: self.getItem(d, ids)
+                    taskData : taskdoc,
+                    //docid : ids,
+                    //data: d,
+                    items: self.getItem(taskdoc)
                     }
             })
             
@@ -65,20 +69,20 @@ class Address extends Component {
     }
 
     // data を元に表示項目を作成
-    getItem(data, docid) {
+    getItem(taskdoc) {
 
-        console.log('data is');
-        console.log(data);
-        if (data == undefined) {return;}
+        //console.log('data is');
+        //console.log(data);
+        if (taskdoc == undefined) {return;}
         let res = [];
-        for (let i=0; i < data.length; i++){
-        res.push(<li key={i}>
-                <Link href="/p/[id]" as={`/p/${docid[i]}`}>
-                    <a>{data[i]['title']}</a>
+        for (let key in taskdoc){
+        res.push(<li key={key}>
+                <Link href="/p/[id]" as={`/p/${key}`}>
+                    <a>{taskdoc[key]['title']}</a>
                  </Link>
                     <ul>
-                        <li key={1}>{data[i]['detail']}</li>
-                        <li key={2}>{new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()}</li>
+                        <li key={1}>{taskdoc[key]['detail']}</li>
+                        <li key={2}>{new Date(taskdoc[key]['deadline'].seconds * 1000).toLocaleDateString()}</li>
                     </ul>
                 </li>);
         }

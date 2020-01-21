@@ -28,7 +28,9 @@ class Address extends Component {
 
     // get data from Firebase
     getFireData() {
-        console.log('TaskDetailの中でgetFireDataが呼ばれました')
+        // 個別タスクのページを直接開いてそこでログインを行った場合のみ
+        // ここで Firestore からのデータ取得が行われる。
+        // タスク一覧から遷移した場合は props を読むので Firestore との通信は行われない（はず）。
         if (firebase.auth().currentUser == undefined ||
             firebase.auth().currentUser == null) { return;}
 
@@ -94,7 +96,21 @@ class Address extends Component {
                     ?
                     <li key="0">no item.</li>
                     :
-                    this.props.items
+                    <div>
+                    <h1>{this.props.taskData[this.props.docId]['title']}</h1>
+                    <h2>詳細</h2>
+                    <h3>{this.props.taskData[this.props.docId]['detail']}</h3>
+                    <h2>状態</h2>
+                    <h3>{this.props.taskData[this.props.docId]['state']}</h3>
+                    <h2>期日</h2>
+                    <h3>{new Date(this.props.taskData[this.props.docId]['deadline'].seconds * 1000).toLocaleDateString()}</h3>
+                    <h2>このタスクの登録者</h2>
+                    <h3>{this.props.taskData[this.props.docId]['publisher']}</h3>
+                    <h2>グループ名</h2>
+                    <h3>{this.props.taskData[this.props.docId]['concerns']}</h3>
+                    <p>タスクの内容を編集する</p>
+                    <p>タスクを削除する</p>
+                    </div>
                     }
                 </ul>
             </div>

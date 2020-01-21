@@ -155,24 +155,27 @@ Account = Object(react_redux__WEBPACK_IMPORTED_MODULE_8__["connect"])(function (
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _static_address_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../static/address_lib */ "./static/address_lib.js");
-/* harmony import */ var _components_Account__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Account */ "./components/Account.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/next/dist/build/polyfills/object-assign.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _static_address_lib__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../static/address_lib */ "./static/address_lib.js");
+/* harmony import */ var _components_Account__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Account */ "./components/Account.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_14__);
+
 
 
 
@@ -181,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/thesugar/next-todo-app/components/Address.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 
 
@@ -193,26 +196,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 var Address =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Address, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Address, _Component);
 
   function Address(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Address);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Address);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Address).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Address).call(this, props));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "style", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "style", {
       fontSize: "12pt",
       padding: "5px 10px"
     });
 
-    _this.logined = _this.logined.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.logined = _this.logined.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     return _this;
   } // login, logout 処理
 
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Address, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Address, [{
     key: "logined",
     value: function logined() {
       this.getFireData();
@@ -220,28 +223,30 @@ function (_Component) {
   }, {
     key: "logouted",
     value: function logouted() {
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/address');
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push('/address');
     } // get data from Firebase
 
   }, {
     key: "getFireData",
     value: function getFireData() {
-      if (firebase__WEBPACK_IMPORTED_MODULE_10___default.a.auth().currentUser == undefined || firebase__WEBPACK_IMPORTED_MODULE_10___default.a.auth().currentUser == null) {
+      if (firebase__WEBPACK_IMPORTED_MODULE_11___default.a.auth().currentUser == undefined || firebase__WEBPACK_IMPORTED_MODULE_11___default.a.auth().currentUser == null) {
         return;
       }
 
-      var db = firebase__WEBPACK_IMPORTED_MODULE_10___default.a.firestore(); // firestore のオブジェクト取得
+      var db = firebase__WEBPACK_IMPORTED_MODULE_11___default.a.firestore(); // firestore のオブジェクト取得
 
       var ref = db.collection('tasks');
       var self = this;
       ref.get().then(function (querySnapshot) {
         var ids = [];
         var d = [];
+        var taskdoc = {};
         querySnapshot.forEach(function (doc, index, querySnapshot) {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-          d.push(_static_address_lib__WEBPACK_IMPORTED_MODULE_11__["default"].deepCopy(doc.data()));
-          ids.push(doc.id); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
+          console.log(doc.id, " => ", doc.data()); //d.push(Lib.deepCopy(doc.data()));
+          //ids.push(doc.id);
+
+          taskdoc = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()(taskdoc, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])({}, doc.id, _static_address_lib__WEBPACK_IMPORTED_MODULE_12__["default"].deepCopy(doc.data()))); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
           // forEach の中で querySnapshot の length が取得できればいいが、、
 
           self.props.dispatch({
@@ -250,9 +255,10 @@ function (_Component) {
               login: self.props.login,
               username: self.props.username,
               email: self.props.email,
-              docid: ids,
-              data: d,
-              items: self.getItem(d, ids)
+              taskData: taskdoc,
+              //docid : ids,
+              //data: d,
+              items: self.getItem(taskdoc)
             }
           });
         });
@@ -261,59 +267,58 @@ function (_Component) {
 
   }, {
     key: "getItem",
-    value: function getItem(data, docid) {
-      console.log('data is');
-      console.log(data);
-
-      if (data == undefined) {
+    value: function getItem(taskdoc) {
+      //console.log('data is');
+      //console.log(data);
+      if (taskdoc == undefined) {
         return;
       }
 
       var res = [];
 
-      for (var i = 0; i < data.length; i++) {
+      for (var key in taskdoc) {
         res.push(__jsx("li", {
-          key: i,
+          key: key,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 79
           },
           __self: this
-        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
+        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
           href: "/p/[id]",
-          as: "/p/".concat(docid[i]),
+          as: "/p/".concat(key),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 80
           },
           __self: this
         }, __jsx("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77
+            lineNumber: 81
           },
           __self: this
-        }, data[i]['title'])), __jsx("ul", {
+        }, taskdoc[key]['title'])), __jsx("ul", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 83
           },
           __self: this
         }, __jsx("li", {
           key: 1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 84
           },
           __self: this
-        }, data[i]['detail']), __jsx("li", {
+        }, taskdoc[key]['detail']), __jsx("li", {
           key: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81
+            lineNumber: 85
           },
           __self: this
-        }, new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()))));
+        }, new Date(taskdoc[key]['deadline'].seconds * 1000).toLocaleDateString()))));
       }
 
       return res;
@@ -322,7 +327,7 @@ function (_Component) {
   }, {
     key: "go",
     value: function go(email) {
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/address_show?email=' + email);
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push('/address_show?email=' + email);
     }
   }, {
     key: "render",
@@ -330,28 +335,28 @@ function (_Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 99
         },
         __self: this
-      }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_13__["default"], {
         onLogined: this.logined,
         onLogouted: this.logouted,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 100
         },
         __self: this
       }), __jsx("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 102
         },
         __self: this
       }, this.props.items.length === 0 || this.props.items === undefined || this.props.items === null ? __jsx("li", {
         key: "0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 105
         },
         __self: this
       }, "no item.") : this.props.items));
@@ -359,9 +364,9 @@ function (_Component) {
   }]);
 
   return Address;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
-Address = Object(react_redux__WEBPACK_IMPORTED_MODULE_8__["connect"])(function (state) {
+Address = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(function (state) {
   return state;
 })(Address);
 /* harmony default export */ __webpack_exports__["default"] = (Address);
@@ -564,7 +569,7 @@ function (_Component) {
           lineNumber: 12
         },
         __self: this
-      }, this.props.title, ">"), __jsx("meta", {
+      }, this.props.title), __jsx("meta", {
         charSet: "utf-8",
         __source: {
           fileName: _jsxFileName,

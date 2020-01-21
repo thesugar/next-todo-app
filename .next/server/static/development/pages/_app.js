@@ -116,9 +116,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store */ "./store.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../store */ "./store.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! firebase */ "firebase");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -129,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/thesugar/next-todo-app/lib/redux-store.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -137,25 +142,49 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+
 const isServer = true;
 const _NRS_ = '__NEXT_REDUX_STORE__';
 
+var auth = () => {
+  return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_8___default.a((resolve, reject) => {
+    firebase__WEBPACK_IMPORTED_MODULE_11___default.a.auth().onAuthStateChanged(user => {
+      if (user) {
+        var user_info = user_info || firebase__WEBPACK_IMPORTED_MODULE_11___default.a.auth().currentUser;
+        console.log(user_info); //ここでは取れる
+
+        resolve(user_info);
+      } else {
+        console.log('// No user is signed in.');
+        reject({
+          message: 'APIにアクセスできませんでした'
+        });
+      }
+    });
+  });
+};
+
 function getOrCreateStore(initialState) {
+  //auth().then(()=>{
   if (isServer) {
-    return Object(_store__WEBPACK_IMPORTED_MODULE_9__["initStore"])(initialState);
+    return Object(_store__WEBPACK_IMPORTED_MODULE_10__["initStore"])(initialState);
   }
 
   if (!window[_NRS_]) {
-    window[_NRS_] = Object(_store__WEBPACK_IMPORTED_MODULE_9__["initStore"])(initialState);
+    //console.log('**check**')
+    //console.log(auth());
+    //initialState['login'] = auth() ? true : false;
+    //initialState['username'] = auth() ? auth().displayName : 'Guest';
+    window[_NRS_] = Object(_store__WEBPACK_IMPORTED_MODULE_10__["initStore"])(initialState);
   }
 
-  return window[_NRS_];
+  return window[_NRS_]; //});
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App => {
-  return class AppWithRedux extends react__WEBPACK_IMPORTED_MODULE_8__["Component"] {
+  return class AppWithRedux extends react__WEBPACK_IMPORTED_MODULE_9__["Component"] {
     static async getInitialProps(appContext) {
-      const reduxStore = getOrCreateStore();
+      const reduxStore = await getOrCreateStore();
       appContext.ctx.reduxStore = reduxStore;
       let appProps = {};
 
@@ -178,7 +207,7 @@ function getOrCreateStore(initialState) {
         reduxStore: this.reduxStore,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 64
         },
         __self: this
       }));
@@ -2321,18 +2350,7 @@ firebase__WEBPACK_IMPORTED_MODULE_2___default.a.auth().onAuthStateChanged(user =
       items: []
     };
   }
-}); // ここで待たせても意味ない。。。
-
-function sleep(waitMsec) {
-  var startMsec = new Date();
-  console.log('sleeping...'); // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-
-  while (new Date() - startMsec < waitMsec);
-}
-
-sleep(0);
-console.log("initial is");
-console.log(initial); // reducer
+}); // reducer
 
 function fireReducer(state = initial, action) {
   switch (action.type) {
@@ -2350,6 +2368,8 @@ function fireReducer(state = initial, action) {
 function initStore(state = initial) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(fireReducer, state, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
 }
+
+
 
 /***/ }),
 
