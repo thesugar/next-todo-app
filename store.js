@@ -29,11 +29,9 @@ let initial;
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     // User is signed in.
-    console.log('currentUserあり！')
     console.log(firebase.auth().currentUser.displayName)
   } else {
     // No user is signed in.
-    console.log('currentUserなし！')
     initial = {
         login : false,
         username : 'unknown',
