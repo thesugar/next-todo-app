@@ -17,17 +17,17 @@ class AddressAdd extends Component {
             Router.push('/address');
         }
         this.state = {
-            name: '',
-            email: '',
-            tel: '',
-            memo: '',
-            message: 'データを入力してください。'
+            title: '',
+            detail: '',
+            deadline: '',
+            concerns: '',
+            message: 'タスクを追加するには以下を入力してください'
         }
         this.logined = this.logined.bind(this);
-        this.onChangeName = this.onChangeName.bind(this);
-        this.onChangeEmail = this.onChangeEmail.bind(this);
-        this.onChangeTel = this.onChangeTel.bind(this);
-        this.onChangeMemo = this.onChangeMemo.bind(this);
+        this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeDetail = this.onChangeDetail.bind(this);
+        this.onChangeDeadline = this.onChangeDeadline.bind(this);
+        this.onChangeConcerns = this.onChangeConcerns.bind(this);
         this.doAction = this.doAction.bind(this);
     }
 
@@ -41,34 +41,36 @@ class AddressAdd extends Component {
     }
 
     // フィールド入力処理
-    onChangeName(e) {
-        this.setState({name: e.target.value});
+    onChangeTitle(e) {
+        this.setState({title: e.target.value});
     }
 
-    onChangeEmail(e){
-        this.setState({email: e.target.value});
+    onChangeDetail(e){
+        this.setState({detail: e.target.value});
     }
 
-    onChangeTel(e){
-        this.setState({tel: e.target.value});
+    onChangeDeadline(e){
+        this.setState({deadline: e.target.value});
     }
 
-    onChangeMemo(e){
-        this.setState({memo: e.target.value});
+    onChangeConcerns(e){
+        this.setState({concerns: e.target.value});
     }
 
     // データの登録処理
     doAction(e){
-        let key = this.state.email;
-        let data = {
-            name: this.state.name,
-            tel: this.state.tel,
-            memo: this.state.memo
-        }
+        
         let db = firebase.firestore();
         // Firestore の登録処理
-        db.collection('address').doc(Lib.encodeEmail(this.props.email)).collection(Lib.encodeEmail(this.state.email)).add({
-            data
+
+        let date = new Date(this.state.deadline)
+        db.collection('tasks').add({
+            title: this.state.title,
+            detail: this.state.detail,
+            deadline: firebase.firestore.Timestamp.fromDate(date),
+            concerns: this.state.concerns,
+            publisher: firebase.auth().currentUser.uid,
+            state : 'doing'
         })
         .then((doc) => {
             console.log(`追加に成功しました (${doc.id})`);
@@ -78,11 +80,11 @@ class AddressAdd extends Component {
         });
 
         this.setState({
-            name: '',
-            email: '',
-            tel: '',
-            memo: '',
-            message: '* 登録しました。'
+            title: '',
+            detail: '',
+            deadline: '',
+            concerns: '',
+            message: '登録しました。'
         })
     }
 
@@ -98,33 +100,33 @@ class AddressAdd extends Component {
                 <table>
                     <tbody>
                         <tr>
-                            <th>name:</th>
+                            <th>タスク名:</th>
                             <td><input type="text" size="30"
-                            value={this.state.name}
-                            onChange={this.onChangeName}/></td>
+                            value={this.state.title}
+                            onChange={this.onChangeTitle}/></td>
                         </tr>
                         <tr>
-                            <th>email:</th>
+                            <th>タスク詳細:</th>
                             <td><input type="text" size="30"
-                            value={this.state.email}
-                            onChange={this.onChangeEmail}/></td>
+                            value={this.state.detail}
+                            onChange={this.onChangeDetail}/></td>
                         </tr>
                         <tr>
-                            <th>tel:</th>
-                            <td><input type="text" size="30"
-                            value={this.state.tel}
-                            onChange={this.onChangeTel}/></td>
+                            <th>期限:</th>
+                            <td><input type="date" size="30"
+                            value={this.state.deadline}
+                            onChange={this.onChangeDeadline}/></td>
                         </tr>
                         <tr>
-                            <th>memo:</th>
+                            <th>グループ:</th>
                             <td><input type="text" size="30"
-                            value={this.state.memo}
-                            onChange={this.onChangeMemo}/></td>
+                            value={this.state.concerns}
+                            onChange={this.onChangeConcerns}/></td>
                         </tr>
                         <tr>
                             <th></th>
                             <td><button onClick={this.doAction}>
-                                Add</button></td>
+                                登録</button></td>
                         </tr>
                     </tbody>
                 </table>

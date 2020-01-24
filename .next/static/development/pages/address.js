@@ -155,22 +155,27 @@ Account = Object(react_redux__WEBPACK_IMPORTED_MODULE_8__["connect"])(function (
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _static_address_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../static/address_lib */ "./static/address_lib.js");
-/* harmony import */ var _components_Account__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Account */ "./components/Account.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/next/dist/build/polyfills/object-assign.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _static_address_lib__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../static/address_lib */ "./static/address_lib.js");
+/* harmony import */ var _components_Account__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Account */ "./components/Account.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_14__);
+
 
 
 
@@ -179,7 +184,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/thesugar/next-todo-app/components/Address.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+
 
 
 
@@ -190,26 +196,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 var Address =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Address, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Address, _Component);
 
   function Address(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Address);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Address);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Address).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Address).call(this, props));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "style", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "style", {
       fontSize: "12pt",
       padding: "5px 10px"
     });
 
-    _this.logined = _this.logined.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.logined = _this.logined.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     return _this;
   } // login, logout 処理
 
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Address, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Address, [{
     key: "logined",
     value: function logined() {
       this.getFireData();
@@ -217,27 +223,30 @@ function (_Component) {
   }, {
     key: "logouted",
     value: function logouted() {
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/address');
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push('/address');
     } // get data from Firebase
 
   }, {
     key: "getFireData",
     value: function getFireData() {
-      if (this.props.email == undefined || this.props.email == '') {
+      if (firebase__WEBPACK_IMPORTED_MODULE_11___default.a.auth().currentUser == undefined || firebase__WEBPACK_IMPORTED_MODULE_11___default.a.auth().currentUser == null) {
         return;
       }
 
-      var email = _static_address_lib__WEBPACK_IMPORTED_MODULE_11__["default"].encodeEmail(this.props.email);
-      var db = firebase__WEBPACK_IMPORTED_MODULE_10___default.a.firestore(); // firestore のオブジェクト取得
+      var db = firebase__WEBPACK_IMPORTED_MODULE_11___default.a.firestore(); // firestore のオブジェクト取得
 
       var ref = db.collection('tasks');
       var self = this;
       ref.get().then(function (querySnapshot) {
+        var ids = [];
         var d = [];
+        var taskdoc = {};
         querySnapshot.forEach(function (doc, index, querySnapshot) {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-          d.push(_static_address_lib__WEBPACK_IMPORTED_MODULE_11__["default"].deepCopy(doc.data())); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
+          console.log(doc.id, " => ", doc.data()); //d.push(Lib.deepCopy(doc.data()));
+          //ids.push(doc.id);
+
+          taskdoc = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()(taskdoc, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])({}, doc.id, _static_address_lib__WEBPACK_IMPORTED_MODULE_12__["default"].deepCopy(doc.data()))); // d.push してるのにループのたびにdispatchしてるから無駄な部分はある
           // forEach の中で querySnapshot の length が取得できればいいが、、
 
           self.props.dispatch({
@@ -246,8 +255,10 @@ function (_Component) {
               login: self.props.login,
               username: self.props.username,
               email: self.props.email,
-              data: d,
-              items: self.getItem(d)
+              taskData: taskdoc,
+              //docid : ids,
+              //data: d,
+              items: self.getItem(taskdoc)
             }
           });
         });
@@ -256,45 +267,58 @@ function (_Component) {
 
   }, {
     key: "getItem",
-    value: function getItem(data) {
-      console.log('data is');
-      console.log(data);
-
-      if (data == undefined) {
+    value: function getItem(taskdoc) {
+      //console.log('data is');
+      //console.log(data);
+      if (taskdoc == undefined) {
         return;
       }
 
       var res = [];
 
-      for (var i = 0; i < data.length; i++) {
+      for (var key in taskdoc) {
         res.push(__jsx("li", {
-          key: data[i]['id'],
+          key: key,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 79
           },
           __self: this
-        }, data[i]['title'], __jsx("ul", {
+        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+          href: "/p/[id]",
+          as: "/p/".concat(key),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 80
+          },
+          __self: this
+        }, __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81
+          },
+          __self: this
+        }, taskdoc[key]['title'])), __jsx("ul", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83
           },
           __self: this
         }, __jsx("li", {
           key: 1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 84
           },
           __self: this
-        }, data[i]['detail']), __jsx("li", {
+        }, taskdoc[key]['detail']), __jsx("li", {
           key: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 85
           },
           __self: this
-        }, new Date(data[i]['deadline'].seconds * 1000).toLocaleDateString()))));
+        }, new Date(taskdoc[key]['deadline'].seconds * 1000).toLocaleDateString()))));
       }
 
       return res;
@@ -303,7 +327,7 @@ function (_Component) {
   }, {
     key: "go",
     value: function go(email) {
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/address_show?email=' + email);
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push('/address_show?email=' + email);
     }
   }, {
     key: "render",
@@ -311,28 +335,28 @@ function (_Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 99
         },
         __self: this
-      }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, __jsx(_components_Account__WEBPACK_IMPORTED_MODULE_13__["default"], {
         onLogined: this.logined,
         onLogouted: this.logouted,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 100
         },
         __self: this
       }), __jsx("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 102
         },
         __self: this
-      }, this.props.items == [] ? __jsx("li", {
+      }, this.props.items.length === 0 || this.props.items === undefined || this.props.items === null ? __jsx("li", {
         key: "0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 105
         },
         __self: this
       }, "no item.") : this.props.items));
@@ -340,9 +364,9 @@ function (_Component) {
   }]);
 
   return Address;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
 
-Address = Object(react_redux__WEBPACK_IMPORTED_MODULE_8__["connect"])(function (state) {
+Address = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(function (state) {
   return state;
 })(Address);
 /* harmony default export */ __webpack_exports__["default"] = (Address);
@@ -545,7 +569,7 @@ function (_Component) {
           lineNumber: 12
         },
         __self: this
-      }, this.props.title, ">"), __jsx("meta", {
+      }, this.props.title), __jsx("meta", {
         charSet: "utf-8",
         __source: {
           fileName: _jsxFileName,
@@ -66410,54 +66434,81 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_Address__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Address */ "./components/Address.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Address__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Address */ "./components/Address.js");
 var _jsxFileName = "/Users/thesugar/next-todo-app/pages/address.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    header: "Address",
-    title: "address book.",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, __jsx(_components_Address__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    header: "GroupTodo",
+    title: "Top page",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }), __jsx("hr", {
+  }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
-  }), __jsx("div", {
+  }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/address_add",
+  }, "What's this app?"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
-  }, __jsx("button", {
+  }, "\u30B0\u30EB\u30FC\u30D7\u3092\u4F5C\u3063\u3066\u3001\u30B0\u30EB\u30FC\u30D7\u3067\u3084\u308B\u3053\u3068\u3084\u30BF\u30B9\u30AF\u3092\u5171\u6709\u3059\u308B\u30A2\u30D7\u30EA\u3067\u3059\u3002"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
-  }, "add"))));
+  }, "\u53CB\u3060\u3061\u540C\u58EB\u3084\u3001\u8077\u5834\u3001\u30B5\u30FC\u30AF\u30EB\u3001\u5BB6\u65CF\u306A\u3069\u3001\u3044\u308D\u3093\u306A\u30B0\u30EB\u30FC\u30D7\u3092\u4F5C\u3063\u3066\u30BF\u30B9\u30AF\u3092\u7BA1\u7406\u3067\u304D\u307E\u3059\u3002"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "\u81EA\u5206\u3072\u3068\u308A\u306E\u30BF\u30B9\u30AF\u3092\u4F5C\u308B\u3053\u3068\u3082\u3067\u304D\u307E\u3059\u3002"), __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "\u3042\u306A\u305F\u306E\u30BF\u30B9\u30AF\u4E00\u89A7"), __jsx(_components_Address__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/address_add",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, __jsx("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "\u30BF\u30B9\u30AF\u3092\u65B0\u898F\u767B\u9332\uFF01"))));
 });
 
 /***/ }),

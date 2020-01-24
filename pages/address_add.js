@@ -4,7 +4,7 @@ import AddressAdd from '../components/AddressAdd';
 import firebase from "firebase";
 
 export default () => (
-    <Layout header="Address" title="address create">
+    <Layout header="Todo" title="タスクを登録する">
         <AddressAdd />
         <hr />
         <div>

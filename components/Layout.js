@@ -9,7 +9,7 @@ class Layout extends Component {
     render() {
         return (<div>
             <Head>
-                <title>{this.props.title}></title>
+                <title>{this.props.title}</title>
                 <meta charSet='utf-8' />
                 <meta name='viewpoint'
                 content='initial-scale=1.0, width=decide-width' />

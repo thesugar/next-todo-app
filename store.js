@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 let fireapp;
+
 try {
     fireapp = firebase.initializeApp(firebaseConfig);
     firebase.analytics();
@@ -24,13 +25,22 @@ try {
 
 export default fireapp;
 
-let initial = {
-    login : firebase.auth().currentUser ? true: false,
-    username : firebase.auth().currentUser ? firebase.auth().currentUser.displayName : 'Guest',
-    email : firebase.auth().currentUser ? firebase.auth().currentUser.email : '',
-    data: [],
-    items: []
-}
+let initial;
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // User is signed in.
+    console.log(firebase.auth().currentUser.displayName)
+  } else {
+    // No user is signed in.
+    initial = {
+        login : false,
+        username : 'unknown',
+        email : '',
+        data: [],
+        items: []
+    }
+  }
+});
 
 
 // reducer
@@ -46,6 +56,8 @@ function fireReducer (state = initial, action) {
 }
 
 // initStore function
-export function initStore(state = initial) {
+function initStore(state = initial) {
     return createStore(fireReducer, state,
         applyMiddleware(thunkMiddleware));}
+
+export { initStore };
